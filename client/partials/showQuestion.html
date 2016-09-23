@@ -10,7 +10,7 @@
 <h3>{{ question.description }}</h3>
 </div>
 <div ng-if="question._answers">
-	<div ng-repeat="x in question._answers">
+	<div ng-repeat="x in question._answers | orderBy: '-likes'">
 		{{ x._user.username }}:
 		<br>
 		<b>{{ x.answer }} --- {{ x.likes }} likes <button ng-click="addLike(x._id)">Like!</button></b>
