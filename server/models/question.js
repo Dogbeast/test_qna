@@ -1,5 +1,3 @@
-console.log('server/models/question.js is running');
-
 var mongoose = require('mongoose');
 
 var questionSchema = new mongoose.Schema({
@@ -8,7 +6,7 @@ var questionSchema = new mongoose.Schema({
 	_user: {type: mongoose.Schema.ObjectId, ref: 'User'},
 	_answers: [{type: String, ref: 'Answer'}]
 });
-
+// VALIDATES THE FIELD THAT IT IS GREATER THAN 10
 function validator(v){
 	return v.length > 10;
 };

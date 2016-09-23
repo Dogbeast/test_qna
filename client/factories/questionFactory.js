@@ -8,6 +8,7 @@ app.factory('questionFactory', function($http){
 			})
 		}
 		this.createQuestion = function(questionText, descriptionText, userId, callback){
+			// SENDS A POST REQUEST TO THE SERVER TO CREATE A NEW QUESTION
 			$http.post('/new_question', {question:questionText, description:descriptionText, id:userId})
 			.then(function(returnedData){
 				callback(returnedData.data);

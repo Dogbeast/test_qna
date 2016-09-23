@@ -1,4 +1,3 @@
-console.log('server/controller/answer.js');
 var mongoose = require('mongoose');
 var Answer = mongoose.model('Answer');
 var Question = mongoose.model('Question');
@@ -6,6 +5,7 @@ var User = mongoose.model('User');
 
 function AnswerController(){
 	this.create = function(req, res){
+		// CREATES A NEW ANSWER AND UPDATES THE ARRAYS IN THE USER AND QUESTION MODELS
 		var answer = new Answer({answer:req.body.answer, detail:req.body.detail, likes:0, _user:req.body.id, _question:req.body.qid})
 		answer.save(function(err, success){
 			if(err){
@@ -22,6 +22,7 @@ function AnswerController(){
 		})
 	};
 	this.addLike = function(req, res){
+		// FINDS THE ANSWER BY ITS ID FIELD AND INCREMENTS THE LIKE BY 1
 		Answer.findByIdAndUpdate(req.body.aid, {$inc: { likes: 1}}).exec();
 		res.json({'answer like': 'success'});
 	}

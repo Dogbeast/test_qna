@@ -1,9 +1,11 @@
-console.log('server/controller/users.js');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 function UsersController(){
 	this.index = function(req, res){
+		// TRIES TO FIND THE APPROPRIATE USER IN THE DATABASE
+		// UPON FAILURE, A NEW USER IS CREATED AND THE PERSON NOW HAS THAT IDENTITY
+		// UPON SUCCESS, THE PERSON NOW USES THE IDENTITY OF THE USER RETREIVED
 		var name = req.body.username;
 		User.findOne({username:name}, function(err, found_user){
 			if(err){
@@ -25,9 +27,6 @@ function UsersController(){
 				}
 			}
 		})
-	};
-	this.show = function(req, res){
-		res.json({'users show': 'success'})
 	};
 }
 
