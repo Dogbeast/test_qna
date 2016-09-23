@@ -1,0 +1,21 @@
+<div ng-controller='new_answerController'>
+	<div ng-controller='sessionController'>
+		<a href="#/">Home</a> | 
+		<a href="#/question/{{ question._id }}">Go Back to Question</a>
+		<a href="#/index" ng-click='loginPage()' style="float:right;">Logout Page</a>
+	</div>
+<h1>{{ question.question }}</h1>
+<div ng-if="question.description">
+<h3>{{ question.description }}</h3>
+</div>
+<br>
+<div ng-if="ERROR">
+<font color='red'>{{ ERROR }}</font>
+</div>
+Your answer: <input type="text" ng-model="answerText" style="width: 300px; height: 100px;">
+<br>
+Supporting details for your answer (optional) <input type="text" ng-model="detailsText" style="width: 300px; height: 100px;">
+<br>
+<button ng-click="goToDashboard()">Cancel</button>
+<button ng-click="createAnswer()">Submit</button>
+</div>

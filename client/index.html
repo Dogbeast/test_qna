@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<title>Full MEAN Wall</title>
+	<script src="./angular/angular.js" charset="utf-8"></script>
+    <script src="./angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="./angular-cookies/angular-cookies.js"></script>
+    <script src='./app.js'></script>
+	<script src='./controllers/loginController.js'></script>
+	<script src='./controllers/dashboardController.js'></script>
+	<script src='./controllers/new_answerController.js'></script>
+	<script src='./controllers/new_questionController.js'></script>
+	<script src='./controllers/sessionController.js'></script>
+	<script src='./controllers/showQuestionController.js'></script>
+	<script src='./factories/answerFactory.js'></script>
+	<script src='./factories/questionFactory.js'></script>
+	<script src='./factories/userFactory.js'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" >
+</head>
+<body>
+<br>
+<div ng-view>
+</div>
+</body>
+</html>

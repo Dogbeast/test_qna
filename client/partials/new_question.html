@@ -1,0 +1,16 @@
+<div ng-controller='new_questionController'>
+	<div ng-controller='sessionController'>
+		<a href="#/">Home</a>
+		<a href="#/index" ng-click='loginPage()' style="float:right;">Logout Page</a>
+	</div>
+<h1>New Question</h1>
+<div ng-if="ERROR">
+<font color='red'>{{ ERROR }}</font>
+</div>
+Question <input type="text" ng-model="questionText" style="width: 300px; height: 100px;">
+<br>
+Description (optional) <input type="text" ng-model="descriptionText" style="width: 300px; height: 100px;">
+<br>
+<button ng-click="goToDashboard()">Cancel</button>
+<button ng-click="createQuestion()">Submit</button>
+</div>

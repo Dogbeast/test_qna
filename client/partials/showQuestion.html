@@ -1,0 +1,21 @@
+<div ng-controller='showQuestionController'>
+<div ng-controller='sessionController'>
+	<a href="#/">Home</a> | 
+	<a href="#/question/{{question._id}}/new_answer">Answer this Question</a>
+	<a href="#/index" ng-click='loginPage()' style="float:right;">Logout Page</a>
+</div>
+<h1>{{ question.question }}</h1>
+<br>
+<div ng-if="question.description">
+<h3>{{ question.description }}</h3>
+</div>
+<div ng-if="question._answers">
+	<div ng-repeat="x in question._answers">
+		{{ x._user.username }}:
+		<br>
+		<b>{{ x.answer }} --- {{ x.likes }} likes <button ng-click="addLike(x._id)">Like!</button></b>
+		<br>
+		{{ x.detail }}
+	</div>
+</div>
+</div>
